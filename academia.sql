@@ -1,0 +1,22 @@
+CREATE DATABASE academia;
+USE academia;
+
+CREATE TABLE planos (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    modalidade VARCHAR(80) NOT NULL,
+    valor_mensal DECIMAL(10,2) NOT NULL,
+    ativo BIT NOT NULL DEFAULT 1
+);
+
+CREATE TABLE alunos (
+	id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(120) NOT NULL,
+    email VARCHAR(120) NOT NULL UNIQUE,
+    idade INT NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    situacao VARCHAR(20) NOT NULL,
+    data_cadastro DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    plano_id BIGINT NOT NULL,
+    CONSTRAINT fk_alunos_planos FOREIGN KEY(plano_id) REFERENCES planos(id)
+);
