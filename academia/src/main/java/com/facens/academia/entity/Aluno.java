@@ -2,7 +2,6 @@ package com.facens.academia.entity;
 
 import jakarta.persistence.*;
 
-import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
