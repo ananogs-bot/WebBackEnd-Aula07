@@ -2,7 +2,9 @@ package com.facens.academia.entity;
 
 import jakarta.persistence.*;
 import java.util.List;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "plano")
 public class Plano {
